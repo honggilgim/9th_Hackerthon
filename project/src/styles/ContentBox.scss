@@ -1,0 +1,320 @@
+.contentBox {
+  width: 90vw;
+  height: 35vw;
+  margin: 0 auto;
+  position: relative;
+
+  .contentEl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    .contentInner {
+      width: 95%;
+      height: 95%;
+      box-shadow: 0 0 2px 0 rgba(black, .4);
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      opacity: .7;
+      transition: .3s;
+
+      &:hover {
+        opacity: 1;
+        scale: 1.02;
+        box-shadow: 0 0 6px 0 rgba(black, .4);
+      }
+
+      .recommendHeader {
+        width: 90%;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        font-size: 2vw;
+
+        strong {
+          font-size: 2.5vw;
+        }
+      }
+
+      .recommendBody {
+        width: 90%;
+        height: 65%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .recommendUsedAlertPage {
+          width: 100%;
+          height: 100%;
+          background-color: rgba(black,.2);
+          position: absolute;
+          z-index: 3;
+          left: 0;
+          top: 0;
+
+          .recommendUsedAlert {
+            width: 60%;
+            height: 30%;
+            background-color: #545454;
+            position: absolute;
+            z-index: 1;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+            .btnQuestion {
+              width: 20%;
+              height: 30%;
+              background-color: #087dff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: .5vw;
+              transition: .5s;
+
+              &:hover {
+                scale: 1.02;
+              }
+
+              &:active {
+                scale: 0.98;
+              }
+            }
+          }
+        }
+
+        .recommendItem {
+          width: 30%;
+          height: 90%;
+          background-color: #FC5230;
+          color: white;
+          position: relative;
+          background-size: cover;
+          transition: .5s;
+
+          &:hover {
+            scale: 1.05;
+          }
+
+          .recommendItemText {
+            width: 100%;
+            height: 100%;
+            transition: .8s;
+            position: relative;
+            padding-left: 1vw;
+
+            &:hover {
+              background-color: rgb(black, .5);
+
+              .recommendItemTitle {
+                bottom: 4vw;
+              }
+            }
+          ;
+
+            .recommendItemTitle {
+              position: absolute;
+              bottom: 1vw;
+              font-size: 2vw;
+              font-weight: 700;
+              transition: 1s;
+            }
+
+            @keyframes infoShow {
+              0% {
+                opacity: 0;
+              }
+              80% {
+                opacity: 0;
+              }
+              100% {
+                opacity: 1;
+                bottom: 2.5vw;
+              }
+            }
+
+            .recommendItemInfo {
+              position: absolute;
+              bottom: 1vw;
+              font-size: 1.3vw;
+              font-weight: 400;
+              animation: infoShow .7s linear forwards;
+            }
+
+            .recommendItemPtr {
+              font-size: 1vw;
+            }
+          }
+        }
+      }
+
+      .recommendFooter {
+        width: 90%;
+        height: 10%;
+      }
+
+      .cartHeader {
+        width: 90%;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .cartTitle {
+          font-weight: 700;
+          font-size: 1.8vw;
+        }
+
+        .cartPrice {
+          strong {
+            font-size: 2.5vw;
+          }
+
+          font-weight: 400;
+          font-size: 1.5vw;
+        }
+
+        .cartNum {
+          font-size: 1vw;
+
+          &:hover {
+            font-weight: 700;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .cartBody {
+        width: 90%;
+        height: 30%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .cartItem {
+          width: 3vw;
+          height: 3vw;
+          border-radius: .5vw;
+          background-color: green;
+          background-size: cover;
+        }
+      }
+
+      .cartFooter {
+        width: 90%;
+        height: 30%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btn {
+          width: 40%;
+          height: 60%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: green;
+          border-radius: .5vw;
+          font-size: 1.2vw;
+
+          &.btnPay {;
+            background-color: #FC5230;
+            color: white;
+          }
+
+          &.btnClear {
+            background-color: #C2C2C2;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .recommendBox {
+    width: 70%;
+    height: 100%;
+
+    .contentInner {
+      height: 97.5%;
+    }
+  }
+
+  .cartBox {
+    right: 0;
+    width: 30%;
+    height: 50%;
+  }
+
+  .mapBox {
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    height: 50%;
+
+    .contentInner {
+      background-color: #FAE100;
+      padding-top: 1.5vw;
+      padding-left: 1.5vw;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      .mapTitle {
+        width: 90%;
+        height: 20%;
+        font-size: 2vw;
+        font-weight: 700;
+        color: #087DFF;
+
+      }
+
+      .mapText {
+        width: 90%;
+        font-size: 1vw;
+        font-weight: 700;
+        color: #392020;
+      }
+
+      .mapContentFooter {
+        width: 90%;
+        height: 40%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .btnMap {
+          width: 50%;
+          height: 60%;
+          background-color: rgba(#087DFF, .7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-weight: 700;
+          border-radius: .5vw;
+          transition: .5s;
+
+          &:hover {
+            background-color: rgba(#087DFF, 1);
+          }
+        }
+
+        img {
+          height: 10vw;
+        }
+      }
+    }
+  }
+}

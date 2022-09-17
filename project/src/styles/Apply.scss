@@ -1,0 +1,66 @@
+.applyPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(black, .4);
+  position: fixed;
+  z-index: 3;
+
+  @keyframes formShow {
+    0% {
+      top: 10vh
+    }
+    100% {
+      top: 0
+    }
+
+  }
+
+  .applyForm {
+    width: 40vw;
+    height: 70vh;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 1vw;
+    animation: formShow .2s linear forwards;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .applyFooter {
+      width: 90%;
+      height: 15%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .btn {
+        width: 35%;
+        height: 80%;
+        background-color: #087DFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: .5vw;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+          opacity: .9;
+        }
+
+        &.btnApply {
+          color: white;
+        }
+
+        &.btnCancel {
+          background-color: #C2C2C2;
+        }
+      }
+    }
+  }
+}

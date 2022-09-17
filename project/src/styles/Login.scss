@@ -1,0 +1,98 @@
+.loginPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(black, .6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+
+  @keyframes formShow {
+    0% {
+      top: 15vh
+    }
+    100% {
+      top: 0
+    }
+  }
+
+  .loginForm {
+    border-radius: 1vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 25vw;
+    height: 65vh;
+    background-color: white;
+    animation: formShow .3s linear forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .loginHeader {
+      width: 50%;
+      height: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 2vw;
+    }
+
+    .loginBody {
+      width: 70%;
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      input{
+        width: 100%;
+        height: 40%;
+        border: none;
+        outline: none;
+        box-shadow: 0 0 2px 0 rgba(black,.3);
+        padding-left: 5%;
+      };
+    }
+
+    .loginFooter {
+      width: 90%;
+      height: 20%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .btn {
+        width: 40%;
+        height: 50%;
+        border-radius: .5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover{
+          font-weight: 700;
+          opacity: .9;
+        }
+        &.btnLogin{
+          background-color: #545454;
+          color: white;
+          transition: .5s;
+          &.active{
+            background-color: #087DFF;
+            color: white;
+          }
+        }
+        &.btnCancel {
+          background-color: #E4E4E4;
+        }
+      }
+    }
+  }
+}

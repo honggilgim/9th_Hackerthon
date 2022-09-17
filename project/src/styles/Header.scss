@@ -1,0 +1,31 @@
+#header{
+  width: 100vw;
+  height: 20vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .logo{
+    width: 20vw;
+  }
+
+  .loginText{
+    width: 25vw;
+    font-size: 1.5vw;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover{
+      .loginTextAlert{
+        text-decoration: underline;
+      }
+      .loginTextSymbol{
+        text-decoration: none;
+      }
+    }
+  }
+}

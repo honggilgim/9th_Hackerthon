@@ -1,0 +1,184 @@
+.mapPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(black, .6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+
+  #map {
+    position: absolute;
+    width: 80vw;
+    height: 90vh;
+    background-color: white;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    .btnBox {
+      position: absolute;
+      width: 20%;
+      height: 10%;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .btn {
+        width: 40%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: .5vw;
+        cursor: pointer;
+
+        &:hover {
+          opacity: .9;
+        }
+
+        &.btnNow {
+          background-color: #087DFF;
+          color: white;
+        }
+
+        &.btnCancel {
+          background-color: #FC5230;
+          color: white;
+        }
+      }
+    }
+
+    .cartBox {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      right: -45%  ;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      z-index: 2;
+      transition: .5s;
+
+      &.active {
+        right: 0%;
+      }
+
+      .cartToggle {
+        width: 5%;
+        height: 10%;
+        background-color: white;
+        z-index: 1;
+        border: .5px solid rgba(black, .4);
+        border-right: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(black, .4);
+        cursor: pointer;
+
+        &:hover {
+          font-weight: 700;
+          color: #087DFF;
+        }
+      }
+
+      .cartList {
+        width: 90%;
+        height: 100%;
+        background-color: white;
+        box-shadow: 0 0 6px 0 rgba(black, .4);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+
+        .contentInfo{
+          width: 90%;
+          height: 15%;
+
+          .contentTitle{
+            font-size: 3vw;
+            font-weight: 700;
+          }
+          .contentAbout{
+            font-size: 1.5vw;
+          }
+        }
+        .contentApplyList{
+          width: 90%;
+          height: 60%;
+          box-shadow: 0 0 1px 0 rgba(black,.8);
+          overflow-y: scroll;
+
+          .contentApply{
+            width: 100%;
+            height: 25%;
+            &:not(:last-child){
+              border-bottom: .1px solid rgba(black,.1);
+            }
+            &:hover{
+              background-color: rgba(black,.1);
+            }
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .btnJoin{
+              width: 5vw;
+              height: 5vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: #087DFF;
+              color: white;
+              border-radius: .5vw;
+              cursor: pointer;
+              font-weight: 400;
+              &:hover{
+               opacity: .8;
+              }
+            }
+          }
+        }
+
+        .contentBtnBox{
+          width: 100%;
+          height: 10%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+
+          .btn{
+            width: 30%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            border-radius: .5vw;
+            cursor: pointer;
+
+            &:hover{
+              opacity: .9;
+            }
+
+            &.btnApply{
+              background-color: #087DFF;
+              color: white;
+            }
+            &.btnCancel{
+              background-color: #C2C2C2;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
