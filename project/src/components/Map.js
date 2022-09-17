@@ -14,6 +14,10 @@ export default function Map(props) {
     const [focusPin,setFocusPin] = useState([])
     const [focusInfo,setFocusInfo] = useState()
 
+    useEffect(()=>{
+        setFocusInfo(positions[props.sup])
+    })
+
     const positions = [
         {
             title: '청주동물원',
@@ -22,7 +26,7 @@ export default function Map(props) {
             content: [
                 {
                     'title': '청주동물원',
-                    'leader': '황진경',
+                    'leader': '김홍길',
                     'date': '2022-09-17'
                 }
             ]
@@ -34,12 +38,12 @@ export default function Map(props) {
             content: [
                 {
                     'title': '상당산성자연휴양림',
-                    'leader': '김홍길',
+                    'leader': '남재현',
                     'date': '2022-09-19'
                 },
                 {
                     'title': '상당산성자연휴양림',  
-                    'leader': '남재현',
+                    'leader': '김진우',
                     'date': '2022-09-23'
                 }
             ]
@@ -59,17 +63,17 @@ export default function Map(props) {
             content: [
                 {
                     'title': '문암 생태공원',
-                    'leader': '김홍길',
+                    'leader': '황진경',
                     'date': '2022-09-19'
                 },
                 {
                     'title': '문암 생태공원',
-                    'leader': '남재현',
+                    'leader': '이지우',
                     'date': '2022-09-23'
                 },
                 {
                     'title': '문암 생태공원',
-                    'leader': '황진경',
+                    'leader': '정의진',
                     'date': '2022-09-30'
                 }
             ]
@@ -111,7 +115,8 @@ export default function Map(props) {
 
 
     useEffect(() => {
-        document.querySelector('.cartBox').classList.toggle('active')
+        cartView ? document.querySelector('.cartBox').classList.add('active') :
+        document.querySelector('.cartBox').classList.remove('active')
     }, [cartView])
 
     useEffect(() => {
@@ -179,7 +184,7 @@ export default function Map(props) {
                         setCartView(!cartView)
                     }}>
                         {
-                            cartView ? "keyboard_double_arrow_left" :
+                            !cartView ? "keyboard_double_arrow_left" :
                                 "keyboard_double_arrow_right"
                         }
                     </div>

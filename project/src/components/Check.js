@@ -42,7 +42,6 @@ export default function Check(props) {
     useEffect(()=>{
         const response = document.querySelectorAll('.resList')
         const btnNext = document.querySelector('.btnNext')
-        console.log(btnNext)
         response.forEach((r,index)=>{
             index === res[questionPtr] ? r.classList.add('active') : r.classList.remove('active')
         })
@@ -98,6 +97,8 @@ export default function Check(props) {
                     }}>이 전</div>
                     <div className="btnNext btn" onClick={()=>{
                         res[questionPtr] != -1 && (questionPtr > 6 ? setQuestionPtr(7) : setQuestionPtr(questionPtr+1))
+                        questionPtr === 7 && props.setChkView(false) 
+                        questionPtr === 7 && props.setUsed(true) 
                     }}>{
                         questionPtr === 7 ? "제 출" : "다 음"
                     }</div>

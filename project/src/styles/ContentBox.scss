@@ -94,13 +94,21 @@
             }
           }
         }
+        
+        .recommendItem.hide{
+          background-color: rgba(black,.2);
+          .recommendItemTitle{
+            color: transparent;
+          }
+        }
 
         .recommendItem {
           width: 30%;
           height: 90%;
-          background-color: #FC5230;
+          background-color: #FAE100;
           color: white;
           position: relative;
+          background-position: center;
           background-size: cover;
           transition: .5s;
 
@@ -120,6 +128,9 @@
 
               .recommendItemTitle {
                 bottom: 4vw;
+              }
+              .recommendItemInfo{
+                color: white;
               }
             }
           ;
@@ -151,6 +162,7 @@
               font-size: 1.3vw;
               font-weight: 400;
               animation: infoShow .7s linear forwards;
+              color: transparent;
             }
 
             .recommendItemPtr {
