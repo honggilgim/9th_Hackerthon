@@ -1,5 +1,5 @@
 import '../styles/ContentBox.scss'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import ContentPage from "./ContentPage";
 import mapLogo from "../images/maplogo.png"
 import {useCookies} from "react-cookie";
@@ -15,6 +15,10 @@ export default function ContentBox() {
     const [connectInfo,setConnectInfo] = useState()
     const [chkView,setChkView] = useState(false)
 
+    useEffect(()=>{
+        connectInfo ? document.querySelector('.btnPay').classList.add('active') : document.querySelector('.btnPay').classList.remove('active')
+    },[connectInfo])
+
     return (<div className="contentBox">
         {
             contentFocus && <ContentPage setContentFocus={setContentFocus}></ContentPage>
@@ -23,7 +27,7 @@ export default function ContentBox() {
             mapView && <Map setConnectInfo={setConnectInfo} setMapView={setMapView}></Map>
         }
         {
-            chkView && <Check></Check>
+            chkView && <Check setChkView={setChkView}></Check>
         }
         <div className="recommendBox contentEl">
             <div className="recommendContent contentInner">
@@ -83,9 +87,7 @@ export default function ContentBox() {
                     <p>{ connectInfo && connectInfo.date }</p>
                 </div>
                 <div className="cartFooter">
-                    <div className="btnPay btn">{
-                        connectInfo ? document.querySelector('.btnPay').classList.add('active') : document.querySelector('.btnPay').classList.remove('active')
-                    }문 의</div>
+                    <div className="btnPay btn"> 문 의</div>
                     <div className="btnClear btn" onClick={()=>{
                         setConnectInfo(false)
                     }}>취 소</div>
