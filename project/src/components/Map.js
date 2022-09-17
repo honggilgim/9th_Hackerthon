@@ -21,6 +21,7 @@ export default function Map(props) {
             text : '도심 속 작은 동물원',
             content: [
                 {
+                    'title': '청주동물원',
                     'leader': '황진경',
                     'date': '2022-09-17'
                 }
@@ -32,10 +33,12 @@ export default function Map(props) {
             text : '맑은 자연과 함께 쉬어가는 장소',
             content: [
                 {
+                    'title': '상당산성자연휴양림',
                     'leader': '김홍길',
                     'date': '2022-09-19'
                 },
                 {
+                    'title': '상당산성자연휴양림',  
                     'leader': '남재현',
                     'date': '2022-09-23'
                 }
@@ -46,6 +49,7 @@ export default function Map(props) {
             latlng: new kakao.maps.LatLng(36.6396283, 127.4831005),
             text : '소풍가기 딱 좋아요',
             content: [
+            
             ]
         },
         {
@@ -54,14 +58,17 @@ export default function Map(props) {
             text : '웰빙 테마의 생테 체험 공원',
             content: [
                 {
+                    'title': '문암 생태공원',
                     'leader': '김홍길',
                     'date': '2022-09-19'
                 },
                 {
+                    'title': '문암 생태공원',
                     'leader': '남재현',
                     'date': '2022-09-23'
                 },
                 {
+                    'title': '문암 생태공원',
                     'leader': '황진경',
                     'date': '2022-09-30'
                 }

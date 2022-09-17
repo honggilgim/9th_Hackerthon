@@ -229,9 +229,13 @@
           border-radius: .5vw;
           font-size: 1.2vw;
 
-          &.btnPay {;
-            background-color: #FC5230;
+
+          &.btnPay{
+            background-color: #545454;
             color: white;
+            &.active {
+              background-color: #087DFF;
+            }
           }
 
           &.btnClear {

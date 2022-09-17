@@ -53,7 +53,7 @@ export default function ContentBox() {
                                 {recItemFocus && <p className="recommendItemInfo">설명</p>}
                             </div>
                         </div>
-                    }
+                
                     <div className="recommendItem"></div>
                     <div className="recommendItem"></div>
                 </div>
@@ -70,24 +70,18 @@ export default function ContentBox() {
                             { connectInfo && "도우미" }
                         </p>
                     </div>
-                    <p className="cartNum">1건</p>
                 </div>
                 <div className="cartBody">
-                    <div className="cartItem"
-                         style={{"backgroundImage": `url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MDJfMjEz%2FMDAxNjU5NDA0ODIyOTQ4.spwNsIHpmCstb0NhYSolct3ZIUnwVQTlaYhHsq6pZZsg.hVTnaXckErWbE8kpIDEtCyqT4Vq4m40LH6AxlJsxK5kg.JPEG.hmresort%2Fbora_four_i2.jpg&type=sc960_832)`}}></div>
-                    <div className="cartItem"
-                         style={{"backgroundImage": `url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MDJfMjEz%2FMDAxNjU5NDA0ODIyOTQ4.spwNsIHpmCstb0NhYSolct3ZIUnwVQTlaYhHsq6pZZsg.hVTnaXckErWbE8kpIDEtCyqT4Vq4m40LH6AxlJsxK5kg.JPEG.hmresort%2Fbora_four_i2.jpg&type=sc960_832)`}}></div>
-                    <div className="cartItem"
-                         style={{"backgroundImage": `url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MDJfMjEz%2FMDAxNjU5NDA0ODIyOTQ4.spwNsIHpmCstb0NhYSolct3ZIUnwVQTlaYhHsq6pZZsg.hVTnaXckErWbE8kpIDEtCyqT4Vq4m40LH6AxlJsxK5kg.JPEG.hmresort%2Fbora_four_i2.jpg&type=sc960_832)`}}></div>
-                    <div className="cartItem"
-                         style={{"backgroundImage": `url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MDJfMjEz%2FMDAxNjU5NDA0ODIyOTQ4.spwNsIHpmCstb0NhYSolct3ZIUnwVQTlaYhHsq6pZZsg.hVTnaXckErWbE8kpIDEtCyqT4Vq4m40LH6AxlJsxK5kg.JPEG.hmresort%2Fbora_four_i2.jpg&type=sc960_832)`}}></div>
-                    <div className="cartItem"
-                         style={{"backgroundImage": `url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MDJfMjEz%2FMDAxNjU5NDA0ODIyOTQ4.spwNsIHpmCstb0NhYSolct3ZIUnwVQTlaYhHsq6pZZsg.hVTnaXckErWbE8kpIDEtCyqT4Vq4m40LH6AxlJsxK5kg.JPEG.hmresort%2Fbora_four_i2.jpg&type=sc960_832)`}}></div>
-
+                <p>{ connectInfo && connectInfo.title }</p>
+                    <p>{ connectInfo && connectInfo.date }</p>
                 </div>
                 <div className="cartFooter">
-                    <div className="btnPay btn">결 제</div>
-                    <div className="btnClear btn">비우기</div>
+                    <div className="btnPay btn">{
+                        connectInfo ? document.querySelector('.btnPay').classList.add('active') : document.querySelector('.btnPay').classList.remove('active')
+                    }문 의</div>
+                    <div className="btnClear btn" onClick={()=>{
+                        setConnectInfo(false)
+                    }}>취 소</div>
                 </div>
             </div>
         </div>
