@@ -4,6 +4,7 @@ import ContentPage from "./ContentPage";
 import mapLogo from "../images/maplogo.png"
 import {useCookies} from "react-cookie";
 import Map from "./Map";
+import Check from './Check';
 
 export default function ContentBox() {
     const [recItemFocus, setRecItemFocus] = useState(false)
@@ -12,6 +13,7 @@ export default function ContentBox() {
     const [cookies, setCookie] = useCookies()
     const [used,setUsed] = useState(false)
     const [connectInfo,setConnectInfo] = useState()
+    const [chkView,setChkView] = useState(false)
 
     return (<div className="contentBox">
         {
@@ -19,6 +21,9 @@ export default function ContentBox() {
         }
         {
             mapView && <Map setConnectInfo={setConnectInfo} setMapView={setMapView}></Map>
+        }
+        {
+            chkView && <Check></Check>
         }
         <div className="recommendBox contentEl">
             <div className="recommendContent contentInner">
@@ -33,7 +38,9 @@ export default function ContentBox() {
                         !used && <div className="recommendUsedAlertPage">
                                     <div className="recommendUsedAlert">
                                         <p>데이터가 충분하지 않습니다!</p>
-                                        <div className="btnQuestion">정보 입력</div>
+                                        <div className="btnQuestion" onClick={()=>{
+                                            setChkView(true)
+                                        }}>정보 입력</div>
                                     </div>
                                 </div>
                     }
